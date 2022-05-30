@@ -43,7 +43,7 @@ func newRootCmd() *cobra.Command {
 	return &cobra.Command{
 		Use:   "vebtree",
 		Short: "Datastrucutre cmd",
-		Long: `Fun vebtree. `,
+		Long:  `Fun vebtree. `,
 	}
 }
 

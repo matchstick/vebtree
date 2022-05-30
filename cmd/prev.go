@@ -18,16 +18,16 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
-
 
 func newPrevCmd() *cobra.Command {
 	var prevCmd = &cobra.Command{
 		Use:   "prev",
 		Short: "",
-		Long: ` `,
-		Args: cobra.MinimumNArgs(1),
+		Long:  ` `,
+		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			dirPath := args[0]
 			fmt.Printf("%s\n", dirPath)

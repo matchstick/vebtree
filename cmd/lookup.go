@@ -18,17 +18,17 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
-
 
 func newLookupCmd() *cobra.Command {
 	// insertCmd represents the insert command.
 	var lookupCmd = &cobra.Command{
 		Use:   "lookup",
 		Short: "",
-		Long: ` `,
-		Args: cobra.MinimumNArgs(1),
+		Long:  ` `,
+		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			dirPath := args[0]
 			fmt.Printf("%s\n", dirPath)

@@ -18,20 +18,32 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
-)
+	"strconv"
 
+	"github.com/spf13/cobra"
+
+	vebtree "github.com/matchstick/vebtree/lib"
+)
 
 func newInsertCmd() *cobra.Command {
 	// insertCmd represents the insert command.
 	var insertCmd = &cobra.Command{
 		Use:   "insert",
 		Short: "",
-		Long: ` `,
-		Args: cobra.MinimumNArgs(1),
+		Long:  ` `,
+		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
-			dirPath := args[0]
-		    fmt.Printf("%s\n", dirPath)
+			var vals []int
+			for _, arg := range args {
+				val, err := strconv.Atoi(arg)
+				if err != nil {
+					fmt.Printf("%v\n", err)
+					return
+				}
+				fmt.Printf("%d\n", val)
+				vals = append(vals, val)
+			}
+			vebtree.Insert(vals)
 		},
 	}
 

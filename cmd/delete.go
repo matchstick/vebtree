@@ -18,17 +18,17 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
-
 
 func newDeleteCmd() *cobra.Command {
 	// insertCmd represents the insert command.
 	var deleteCmd = &cobra.Command{
 		Use:   "delete",
 		Short: "",
-		Long: ` `,
-		Args: cobra.MinimumNArgs(1),
+		Long:  ` `,
+		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			dirPath := args[0]
 			fmt.Printf("%s\n", dirPath)
