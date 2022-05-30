@@ -1,0 +1,9 @@
+*.swp
+*.bak
+cov.out
+coverage.out
+vebtree
+
+# Goland
+.idea/
+*.iml
