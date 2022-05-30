@@ -36,8 +36,7 @@ fix:
 
 fmt:
 	go fmt ./...
-	go get $(REPO_GOIMPORTS)
-	$(GOBIN)/goimports -w .
+	goimports -w .
 	gofmt -w -s .
 
 tidy:
@@ -50,12 +49,11 @@ vet:
 	go vet ./...
 
 lint:
-	go get $(REPO_GOLINT)
-	$(GOBIN)/golangci-lint run ./...
+	golangci-lint run ./...
 
 docs:
-	go get $(REPO_GODOC)
-	$(GOBIN)/godoc -http=localhost:6060
+	@echo "http://127.0.0.1:6060/pkg/#stdlib"
+	@godoc -http=localhost:6060
 
 covhtml:
 	go test ./... -coverprofile=cov.out
