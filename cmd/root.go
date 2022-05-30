@@ -32,7 +32,7 @@ func newVersionCmd() *cobra.Command {
 		Long:  `Outputs release version. `,
 		Args:  cobra.MaximumNArgs(numVersionCmdArgs),
 		Run: func(cmd *cobra.Command, args []string) {
-			version := "v1.1.2"
+			version := "v0.0.1"
 			fmt.Printf("%s\n", version)
 		},
 	}
@@ -55,14 +55,14 @@ func Execute() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd := newRootCmd()
-/*
-	rootCmd.AddCommand(newEvalCmd())
-	rootCmd.AddCommand(newFilterCmd())
-	rootCmd.AddCommand(newMergeCmd())
-	rootCmd.AddCommand(newScanCmd())
-	rootCmd.AddCommand(newSortCmd())
+
+	rootCmd.AddCommand(newInsertCmd())
+	rootCmd.AddCommand(newDeleteCmd())
+	rootCmd.AddCommand(newLookupCmd())
+	rootCmd.AddCommand(newNextCmd())
+	rootCmd.AddCommand(newPrevCmd())
 	rootCmd.AddCommand(newVersionCmd())
-*/
+
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(exitErr)
